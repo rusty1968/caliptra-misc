@@ -1,9 +1,10 @@
-use caliptra_image_types::ImageEccSignature;
+use caliptra_image_types::{ImageEccSignature};
 use der::{Decode, Sequence, SliceReader};
 use std::io::{Read, Write};
 use zerocopy::AsBytes;
 
 pub mod verifier;
+
 
 #[derive(Sequence)]
 pub struct DerEccSignature {

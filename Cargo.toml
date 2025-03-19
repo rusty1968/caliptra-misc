@@ -15,3 +15,4 @@ caliptra-builder = { git = "https://github.com/chipsalliance/caliptra-sw.git", b
 
 caliptra-image-types = { git = "https://github.com/chipsalliance/caliptra-sw.git", branch = "caliptra-1.1"  }
 zerocopy = "0.6.6"
+openssl = "0.10.71"
