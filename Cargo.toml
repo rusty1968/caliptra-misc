@@ -1,0 +1,17 @@
+[package]
+name = "der-tool"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+p384 = {version = "0.9.0", features = ["ecdsa"] }
+der = { version = "0.7.9", features = ["derive", "alloc"] }
+hex = "0.4.3"
+asn1-rs = "0.5.0"  # Replace with the latest version
+anyhow = "1.0.97"
+caliptra-image-crypto = { git = "https://github.com/chipsalliance/caliptra-sw.git", branch = "caliptra-1.1"  }
+caliptra-hw-model = { git = "https://github.com/chipsalliance/caliptra-sw.git", branch = "caliptra-1.1"  }
+caliptra-builder = { git = "https://github.com/chipsalliance/caliptra-sw.git", branch = "caliptra-1.1"  }
+
+caliptra-image-types = { git = "https://github.com/chipsalliance/caliptra-sw.git", branch = "caliptra-1.1"  }
+zerocopy = "0.6.6"
