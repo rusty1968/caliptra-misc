@@ -34,6 +34,7 @@ impl FuseGenerator {
         caliptra_hw_model::Fuses {
             key_manifest_pk_hash: vendor_pk_hash_words,
             owner_pk_hash: owner_pk_hash_words,
+            lms_verify:true,
             ..Default::default()
         }
     
@@ -96,16 +97,9 @@ mod tests {
         // Call the test_image function
         test_image(&security_state, &fuses, fw_image.to_vec());
 
-
-        let fw_image = include_bytes!("../test_data/image-bundle_signed_with_testkey.bin");
-
-        // Call the test_image function
-        test_image(&security_state, &fuses, fw_image.to_vec());
-
-        let fw_image = include_bytes!("../test_data/image-bundle_signed_with_newkey.bin");
-
+        // Create a sample firmware image
+        let fw_image = include_bytes!("../test_data/fake-image-bundle_signed_LMS.bin");
         let fuses = FuseGenerator::from_image(fw_image);
-
         // Call the test_image function
         test_image(&security_state, &fuses, fw_image.to_vec());
 
